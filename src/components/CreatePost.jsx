@@ -2,7 +2,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { db } from "../firebase"
 import { useState } from "react"
 
-const CreateBlog = ({ uid, navigate }) => {
+const CreatePost = ({ uid, navigate }) => {
     const [message, setMessage] = useState("")
     const [status, setStatus] = useState("")
 
@@ -47,4 +47,4 @@ const CreateBlog = ({ uid, navigate }) => {
     )
 }
 
-export default CreateBlog
+export default CreatePost
