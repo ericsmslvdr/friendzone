@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import CreateBlog from "./CreatePost"
+import CreatePost from "../components/CreatePost"
 import { onAuthStateChanged, signOut } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
 import { auth, db } from "../firebase"
 import { collection, getDocs, onSnapshot, orderBy, query } from "firebase/firestore"
-import Posts from "./Posts"
+import Posts from "../components/Posts"
 
 const Home = () => {
     const navigate = useNavigate()
@@ -61,7 +61,7 @@ const Home = () => {
                 <button onClick={handleLogout}>Logout</button>
             </div>
             <span>{user}</span>
-            <CreateBlog uid={uid} navigate={navigate} />
+            <CreatePost uid={uid} navigate={navigate} />
             {
                 posts.length > 0
                     ? <Posts posts={posts} user={user} uid={uid} />
