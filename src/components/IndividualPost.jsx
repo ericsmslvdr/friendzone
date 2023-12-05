@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { db } from "../firebase"
 
 const IndividualPost = ({ post, uid }) => {
-    const time = post.timeStamp.toDate().toDateString()
+    const time = post.timeStamp ? post.timeStamp.toDate().toDateString() : ""
     const [displayName, setDisplayName] = useState("")
 
     useEffect(() => {
