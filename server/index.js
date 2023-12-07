@@ -1,6 +1,19 @@
 import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+
+dotenv.config()
+const mongodb = process.env.MONGODB
+try {
+    (async () => {
+        await mongoose.connect(mongodb)
+        console.log("Connected to MongoDB!");
+    })()
+} catch (error) {
+    console.log(error);
+}
 
 const app = express()
 
