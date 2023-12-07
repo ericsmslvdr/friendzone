@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { auth, db } from "../firebase"
 import { collection, getDocs, onSnapshot, orderBy, query } from "firebase/firestore"
 import Posts from "../components/Posts"
+import Navbar from "../components/Navbar"
 
 const Home = () => {
     const navigate = useNavigate()
@@ -55,19 +56,22 @@ const Home = () => {
     console.log(posts);
     console.log(posts.length > 1);
     return (
-        <div>
-            <div className="row">
-                <h1>My Posts </h1>
-                <button onClick={handleLogout}>Logout</button>
-            </div>
-            <span>{user}</span>
-            <CreatePost uid={uid} navigate={navigate} />
-            {
-                posts.length > 0
-                    ? <Posts posts={posts} user={user} uid={uid} />
-                    : <div>No Posts from this user...</div>
-            }
-        </div>
+        <>
+            <Navbar />
+            <section className="bg-blue-600 px-20">
+                <div className="row">
+                    <h1>My Posts </h1>
+                    <button onClick={handleLogout}>Logout</button>
+                </div>
+                <span>{user}</span>
+                <CreatePost uid={uid} navigate={navigate} />
+                {
+                    posts.length > 0
+                        ? <Posts posts={posts} user={user} uid={uid} />
+                        : <div>No Posts from this user...</div>
+                }
+            </section>
+        </>
     )
 }
 
