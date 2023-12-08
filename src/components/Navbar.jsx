@@ -1,10 +1,13 @@
+import fzIcon from '../assets/friendzone-icon.png'
+
 
 const Navbar = () => {
     return (
-        <nav className="container mx-auto">
-            <div className="flex justify-between items-center py-2">
-                <div>
-                    FriendZone
+        <nav className="bg-white dark:bg-gray-900 fixed start-0 end-0 z-20 border-b border-gray-200 dark:border-gray-600">
+            <div className="container mx-auto flex justify-between items-center py-2">
+                <div className='flex items-center gap-2'>
+                    <img className='w-12 h-12' src={fzIcon} alt="" />
+                    <span className='text-slate-400 text-lg'>FriendZone</span>
                 </div>
                 <div>
                     <button
