@@ -28,7 +28,7 @@ const CreatePost = ({ uid, navigate }) => {
 
     return (
         <div>
-            <div className="create-post-box">
+            <div>
                 {status && <div style={{ padding: "10px", border: "1px solid black" }}>{status}</div>}
                 <form action="">
                     <textarea
@@ -40,7 +40,7 @@ const CreatePost = ({ uid, navigate }) => {
                         value={message}
                     />
                 </form>
-                <div className="message-box"></div>
+                <div></div>
                 <button onClick={createPost}>Post</button>
             </div>
         </div>
