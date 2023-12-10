@@ -27,21 +27,21 @@ const CreatePost = ({ uid, navigate }) => {
     }
 
     return (
-        <div>
+        <div className="bg-slate-700 my-4 w-1/2 mx-auto p-5 rounded-lg border-t-[0.5px] border-slate-500">
             <div>
                 {status && <div style={{ padding: "10px", border: "1px solid black" }}>{status}</div>}
                 <form action="">
                     <textarea
                         type="text"
                         rows="4"
-                        cols="50"
+                        className="w-full"
                         placeholder="message here..."
                         onChange={(e) => setMessage(e.target.value)}
                         value={message}
                     />
                 </form>
                 <div></div>
-                <button onClick={createPost}>Post</button>
+                <button className="w-full bg-blue-600 rounded py-2 border-t-[0.5px] border-blue-500 text-slate-100 font-medium" onClick={createPost}>Post</button>
             </div>
         </div>
     )

@@ -114,11 +114,11 @@ const Home = () => {
                         ? <Posts posts={posts} user={user} uid={uid} />
                         : <div>No Posts from this user...</div>
                 } */}
-                <div className="flex justify-between w-3/4">
+                <div className="flex justify-between w-full">
                     <aside>
                         {
                             sample_post.map((data) =>
-                                <div className="bg-slate-700 p-4 rounded-lg mb-4">
+                                <div className="bg-slate-700 p-4 rounded-lg mb-4 border-t-[0.5px] border-slate-500">
                                     <div className="flex gap-4">
                                         <img className="rounded-full w-12 h-12" src={data.profile_pic} alt="" />
                                         <div className="flex flex-col">
@@ -139,10 +139,10 @@ const Home = () => {
                         }
                     </aside>
                     <aside>
-                        <div className="bg-slate-700 p-4 rounded-lg">
+                        <div className="bg-slate-700 p-4 rounded-lg border-t-[0.5px] border-slate-500">
                             {
                                 friends.map((friend) =>
-                                    <div className="flex">
+                                    <div className="flex gap-2 py-2">
                                         <img className="rounded-full w-12 h-12" src={friend.profile_pic} alt="" />
                                         <div>
                                             <span>{friend.name}</span>
